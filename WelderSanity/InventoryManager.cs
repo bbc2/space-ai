@@ -71,30 +71,14 @@ namespace IngameScript
             /// </summary>
             private static List<IMyInventory> GetInventories(IEnumerable<IMyTerminalBlock> blocks)
             {
-                var inventories = (from block in blocks
-                        where block.InventoryCount == 1
-                        select block.GetInventory())
-                    .ToList();
-
-                inventories.Sort(delegate(IMyInventory inv0, IMyInventory inv1)
-                {
-                    if (inv0.MaxVolume == inv1.MaxVolume)
-                    {
-                        return 0;
-                    }
-
-                    if (inv0.MaxVolume < inv1.MaxVolume)
-                    {
-                        return 1;
-                    }
-
-                    return -1;
-                });
-
-                return inventories;
+                var inventories =
+                    from block in blocks
+                    where block.InventoryCount == 1
+                    select block.GetInventory();
+                return inventories.OrderByDescending(inv => inv.MaxVolume).ToList();
             }
 
-            private Dictionary<MyItemType, MyFixedPoint> CountComponents(IEnumerable<IMyInventory> inventories)
+            private static Dictionary<MyItemType, MyFixedPoint> CountComponents(IEnumerable<IMyInventory> inventories)
             {
                 var itemCounts = new Dictionary<MyItemType, MyFixedPoint>();
 
