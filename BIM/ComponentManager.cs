@@ -209,8 +209,8 @@ namespace IngameScript
                     counts.TryGetValue(resource, out count);
                     MyFixedPoint targetCount;
                     targetCounts.TryGetValue(resource, out targetCount);
-
-                    screen.WriteText($"{cursor} {info.Name,-18} {Int(count)} / {Int(targetCount)}\n", true);
+                    var ratio = (double) count / (double) targetCount;
+                    screen.WriteText($"{cursor} {info.Name,-18} {Int(count)} / {Int(targetCount)} {ProgressBar(ratio, 26)}\n", true);
                 }
             }
 
