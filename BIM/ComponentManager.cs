@@ -181,9 +181,8 @@ namespace IngameScript
                 return counts;
             }
 
-            private static Dictionary<Component, MyFixedPoint> GetTargetCounts()
+            private static Dictionary<Component, MyFixedPoint> GetTargetCounts(int multiplier)
             {
-                const int multiplier = 100;
                 var counts = new Dictionary<Component, MyFixedPoint>();
                 {
                     foreach (var entry in Info)
@@ -223,7 +222,7 @@ namespace IngameScript
             {
             }
 
-            internal void Update()
+            internal void Update(Config config)
             {
                 var blocks = new List<IMyTerminalBlock>();
                 _grid.GridTerminalSystem.SearchBlocksOfName("(bim#components)", blocks,
@@ -231,7 +230,7 @@ namespace IngameScript
                 var screens = blocks.Cast<IMyTextSurface>().ToList();
 
                 var counts = GetCounts();
-                var targetCounts = GetTargetCounts();
+                var targetCounts = GetTargetCounts(config.Multiplier);
                 foreach (var screen in screens)
                 {
                     InitScreen(screen);

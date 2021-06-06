@@ -26,6 +26,28 @@ namespace IngameScript
         private readonly OreManager _oreManager;
         private readonly ComponentManager _componentManager;
 
+        internal class Config
+        {
+            public Config(int multiplier)
+            {
+                Multiplier = multiplier;
+            }
+
+            public int Multiplier { get; }
+        }
+
+        private Config ParseConfig()
+        {
+            var data = Me.CustomData;
+            var multiplier = 100;
+            if (data.Length > 0)
+            {
+                multiplier = int.Parse(data);
+            }
+
+            return new Config(multiplier);
+        }
+
         public Program()
         {
             Runtime.UpdateFrequency = UpdateFrequency.Update10;
@@ -42,9 +64,10 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
+            var config = ParseConfig();
             _statusDisplay.Update();
             _oreManager.Update();
-            _componentManager.Update();
+            _componentManager.Update(config);
         }
     }
 }
