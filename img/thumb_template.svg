@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="720mm"
+   height="450mm"
+   viewBox="0 0 720 450"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="thumb_template.svg"
+   inkscape:export-filename="/home/bertrand/code/space-ai/WelderSanity/thumb.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.1888469"
+     inkscape:cx="1164.9648"
+     inkscape:cy="770.46538"
+     inkscape:window-width="1364"
+     inkscape:window-height="746"
+     inkscape:window-x="0"
+     inkscape:window-y="20"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#333333;stroke-width:0.906454"
+       id="rect37363"
+       width="722.42169"
+       height="453.63248"
+       x="-1.9422375"
+       y="-0.90350974" />
+    <text
+       xml:space="preserve"
+       style="font-size:82.8438px;line-height:1.25;font-family:sans-serif;stroke-width:0.248532"
+       x="47.968086"
+       y="211.05675"
+       id="text14465"
+       transform="scale(0.993928,1.0061091)"><tspan
+         sodipodi:role="line"
+         id="tspan14463"
+         style="font-size:82.8438px;fill:#ffffff;stroke-width:0.248532;font-weight:bold"
+         x="47.968086"
+         y="211.05675">Script</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:93.4322px;line-height:1.25;font-family:sans-serif;stroke-width:0.280297"
+       x="50.970955"
+       y="105.55448"
+       id="text53239"
+       transform="scale(0.9857331,1.0144734)"><tspan
+         sodipodi:role="line"
+         id="tspan53237"
+         style="font-size:93.4322px;fill:#20dc20;fill-opacity:1;stroke-width:0.280297"
+         x="50.970955"
+         y="105.55448">space-ai</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:93.4322px;line-height:1.25;font-family:sans-serif;fill:#999999;stroke-width:0.280297"
+       x="452.21298"
+       y="104.9549"
+       id="text58858"
+       transform="scale(0.9857331,1.0144734)"><tspan
+         sodipodi:role="line"
+         id="tspan58856"
+         style="font-weight:bold;font-size:93.4322px;fill:#999999;stroke-width:0.280297"
+         x="452.21298"
+         y="104.9549">/</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:39.765px;line-height:1.25;font-family:sans-serif;fill:#b3b3b3;stroke-width:0.248532"
+       x="291.78421"
+       y="371.39014"
+       id="text65509"
+       transform="scale(0.99392801,1.0061091)"><tspan
+         sodipodi:role="line"
+         id="tspan65507"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:39.765px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#b3b3b3;stroke-width:0.248532"
+         x="291.78421"
+         y="371.39014">deployed with <tspan
+   style="font-weight:bold;stroke-width:0.248532"
+   id="tspan96322">MDK</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:29.8238px;line-height:1.25;font-family:sans-serif;fill:#b3b3b3;stroke-width:0.248532"
+       x="86.715828"
+       y="411.15512"
+       id="text82568"
+       transform="scale(0.993928,1.0061091)"><tspan
+         sodipodi:role="line"
+         id="tspan82566"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:29.8238px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';fill:#b3b3b3;stroke-width:0.248532"
+         x="86.715828"
+         y="411.15512">https://github.com/malware-dev/MDK-SE</tspan></text>
+  </g>
+</svg>
