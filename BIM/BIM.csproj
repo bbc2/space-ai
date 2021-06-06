@@ -39,6 +39,7 @@
   <Import Project="MDK/MDK.paths.props" Condition="exists('MDK/MDK.paths.props')" />
   <ItemGroup>
     <Compile Include="Aligner.cs" />
+    <Compile Include="Util.cs" />
     <Compile Include="ComponentManager.cs" />
     <Compile Include="OreManager.cs" />
     <Compile Include="StatusDisplay.cs" />

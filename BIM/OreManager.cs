@@ -100,11 +100,6 @@ namespace IngameScript
             screen.Font = "Monospace";
         }
 
-        private static string Scalar(MyFixedPoint value)
-        {
-            return $"{(float) value,11:F3}";
-        }
-
         public class OreManager
         {
             private readonly MyGridProgram _grid;
@@ -304,7 +299,7 @@ namespace IngameScript
                 screen.WriteText($"{title}\n");
                 foreach (var entry in counts)
                 {
-                    screen.WriteText($"{Info[entry.Key].Name,-10} {Scalar(entry.Value)}\n", append: true);
+                    screen.WriteText($"{Info[entry.Key].Name,-10} {Float(entry.Value)}\n", append: true);
                 }
             }
 
@@ -313,7 +308,7 @@ namespace IngameScript
                 screen.ContentType = ContentType.TEXT_AND_IMAGE;
                 screen.WriteText("INVENTORY\n");
                 const string name = "Volume";
-                screen.WriteText($"{name,-10} {Scalar(counts.VolumeOccupied)} / {Scalar(counts.Volume)}\n",
+                screen.WriteText($"{name,-10} {Float(counts.VolumeOccupied)} / {Float(counts.Volume)}\n",
                     append: true);
 
                 var projected = new Dictionary<Res, MyFixedPoint>();
@@ -347,7 +342,7 @@ namespace IngameScript
                     counts.Ingots.TryGetValue(resource, out currentCount);
 
                     var totalCount = projectedCount + currentCount;
-                    screen.WriteText($"{info.Name,-10} {Scalar(currentCount)} / {Scalar(totalCount)}\n",
+                    screen.WriteText($"{info.Name,-10} {Float(currentCount)} / {Float(totalCount)}\n",
                         append: true);
                 }
 
@@ -365,7 +360,7 @@ namespace IngameScript
 
                     MyFixedPoint count;
                     counts.Ores.TryGetValue(resource, out count);
-                    screen.WriteText($"{info.Name,-10} {Scalar(count)}\n", append: true);
+                    screen.WriteText($"{info.Name,-10} {Float(count)}\n", append: true);
                 }
             }
 
@@ -381,24 +376,17 @@ namespace IngameScript
                     block => block.IsSameConstructAs(_grid.Me) && block is IMyTextSurface);
                 var summaryScreens = blocks.Cast<IMyTextSurface>().ToList();
 
-                foreach (var screen in oreScreens)
-                {
-                    InitScreen(screen);
-                }
-                foreach (var screen in summaryScreens)
-                {
-                    InitScreen(screen);
-                }
-
                 var counts = GetCounts(Info.Keys);
 
                 foreach (var screen in oreScreens)
                 {
+                    InitScreen(screen);
                     ShowCounts(screen, "ORES", counts.Ores);
                 }
 
                 foreach (var screen in summaryScreens)
                 {
+                    InitScreen(screen);
                     ShowSummary(screen, counts);
                 }
             }

@@ -341,7 +341,6 @@ namespace IngameScript
                     where connector.Status == MyShipConnectorStatus.Connected && connector.OtherConnector != null
                     select connector.OtherConnector
                 );
-
                 var connectedBlocks = blocks.Where(block => connectedConnectors.Any(block.IsSameConstructAs));
                 var connectedInventories = GetInventories(connectedBlocks);
 
