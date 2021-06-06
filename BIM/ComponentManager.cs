@@ -128,7 +128,7 @@ namespace IngameScript
                     new ComponentInfo("RadioCommunication", "RadioCommunicationComponent", "Radio", .5)
                 },
                 {Component.Reactor, new ComponentInfo("Reactor", "ReactorComponent", "Reactor", .5)},
-                {Component.SmallTube, new ComponentInfo("SmallTube", "SmallTube", "Small Tube", 3)},
+                {Component.SmallTube, new ComponentInfo("SmallTube", "SmallTube", "Small Tube", 6)},
                 {Component.SolarCell, new ComponentInfo("SolarCell", "SolarCell", "Solar Cell", .1)},
                 {Component.SteelPlate, new ComponentInfo("SteelPlate", "SteelPlate", "Steel Plate", 40)},
                 {Component.Superconductor, new ComponentInfo("Superconductor", "Superconductor", "Superconductor", 1)},
