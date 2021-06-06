@@ -68,6 +68,11 @@ namespace IngameScript
                     _index = (_index + 1) % Values.Length;
                 }
 
+                public Component GetPrevious()
+                {
+                    return (Component) Values.GetValue((_index + Values.Length - 1) % Values.Length);
+                }
+
                 public Component GetCurrent()
                 {
                     return (Component) Values.GetValue(_index);
@@ -227,18 +232,14 @@ namespace IngameScript
 
                 var counts = GetCounts();
                 var targetCounts = GetTargetCounts();
-                var component = _componentIterator.GetCurrent();
                 foreach (var screen in screens)
                 {
                     InitScreen(screen);
-                    ShowSummary(screen, counts, targetCounts, component);
+                    ShowSummary(screen, counts, targetCounts, _componentIterator.GetPrevious());
                 }
-
-                var diff = targetCounts[component] - counts[component];
 
                 var assemblers = new List<IMyAssembler>();
                 _grid.GridTerminalSystem.GetBlocksOfType(assemblers, block => block.IsSameConstructAs(_grid.Me));
-
                 _grid.Echo($"Assemblers: {assemblers.Count}");
 
                 if (DateTime.UtcNow < _start + TimeSpan.FromSeconds(3))
@@ -253,6 +254,9 @@ namespace IngameScript
                     return;
                 }
 
+                var currentComponent = _componentIterator.GetCurrent();
+                var diff = targetCounts[currentComponent] - counts[currentComponent];
+
                 if (diff <= 0)
                 {
                     _grid.Echo("No diff");
@@ -265,7 +269,7 @@ namespace IngameScript
                     assembler.ClearQueue();
                 }
 
-                var info = Info[component];
+                var info = Info[currentComponent];
                 var increment = (int) diff / assemblers.Count;
                 var remainder = (int) diff % assemblers.Count;
                 foreach (var assembler in assemblers)
