@@ -75,7 +75,7 @@ namespace IngameScript
                     from block in blocks
                     where block.InventoryCount == 1
                     select block.GetInventory();
-                return inventories.OrderByDescending(inv => inv.MaxVolume).ToList();
+                return inventories.OrderByDescending(inv => (float) inv.MaxVolume).ToList();
             }
 
             private static Dictionary<MyItemType, MyFixedPoint> CountComponents(IEnumerable<IMyInventory> inventories)
