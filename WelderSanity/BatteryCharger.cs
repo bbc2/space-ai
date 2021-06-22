@@ -46,10 +46,16 @@ namespace IngameScript
                 var batteries = new List<IMyBatteryBlock>();
                 _program.GridTerminalSystem.GetBlocksOfType(batteries, block => block.IsSameConstructAs(_program.Me));
 
+                var orderedBatteries =
+                    batteries.OrderByDescending(battery => battery.CurrentStoredPower);
+                var highestBattery = orderedBatteries.First();
+                var lowBatteries = orderedBatteries.Skip(1);
+
                 var chargeMode = connected ? ChargeMode.Recharge : ChargeMode.Auto;
                 _program.Echo($"Connected: {connected}");
 
-                foreach (var battery in batteries.Where(battery => !battery.DisplayNameText.Contains("(ws#critbat)")))
+                highestBattery.ChargeMode = ChargeMode.Auto;
+                foreach (var battery in lowBatteries)
                 {
                     battery.ChargeMode = chargeMode;
                 }
