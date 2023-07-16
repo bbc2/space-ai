@@ -8,7 +8,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>IngameScript</RootNamespace>
     <AssemblyName>WelderSanity</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -52,6 +52,9 @@
     <AdditionalFiles Include="MDK\whitelist.cache" />
     <Compile Include="InventoryManager.cs" />
     <Compile Include="StatusDisplay.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterBuild">
