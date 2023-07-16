@@ -185,6 +185,14 @@ namespace IngameScript
                     )
                 },
                 {
+                    Res.Silicon,
+                    new ResourceInfo(
+                        id: Res.Silicon,
+                        name: "Silicon",
+                        products: new List<Product> {new Product(id: Res.Silicon, yield: .7)}
+                    )
+                },
+                {
                     Res.Silver,
                     new ResourceInfo(
                         id: Res.Silver,
