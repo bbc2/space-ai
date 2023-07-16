@@ -7,7 +7,7 @@ namespace IngameScript
     {
         private static string Float(MyFixedPoint value)
         {
-            return $"{(float) value,11:F3}";
+            return $"{(float) value,13:F3}";
         }
 
         private static string Int(MyFixedPoint value)
